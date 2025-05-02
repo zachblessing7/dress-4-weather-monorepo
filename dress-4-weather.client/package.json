@@ -1,5 +1,5 @@
 {
-  "name": "dress-4-weather-client",
+  "name": "dress-4-weather.client",
   "description": "A web client for the Dress4Weather application, built with React and Vite.",
   "private": true,
   "version": "0.0.0",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@types/node": "^22.15.3",
     "axios": "^1.9.0",
+    "bootstrap": "^5.3.5",
     "path": "^0.12.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

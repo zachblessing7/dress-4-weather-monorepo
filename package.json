@@ -8,7 +8,8 @@
   "scripts": {
     "dev:client": "yarn workspace dress-4-weather.client dev",
     "dev:api": "yarn workspace dress-4-weather.api start:dev",
-    "dev": "concurrently \"yarn dev:api\" \"yarn dev:client\"",
+    "dev": "concurrently --raw --handle-input -n \"API,CLIENT,BROWSER\" -c \"green,blue,yellow\" \"yarn dev:api\" \"yarn dev:client\" \"yarn open-browser\"",
+    "open-browser": "timeout /t 5 && start http://localhost:5173",
     "build:client": "yarn workspace dress-4-weather.client build",
     "build:api": "yarn workspace dress-4-weather.api build",
     "build": "yarn build:api && yarn build:client"
