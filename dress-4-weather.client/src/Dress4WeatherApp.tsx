@@ -1,15 +1,12 @@
+import { PageTitle } from '@/features/common/components/PageTitle';
 import { Weather } from '@/features/weather/Weather';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export function Dress4WeatherApp() {
   return (
-    <>
-      <div className="Dress4WeatherApp">
-        <h1 className="title">Dress4Weather</h1>
-        <p className="description">
-          Removing decision anxiety/overload for moms
-        </p>
-      </div>
+    <div className="min-vh-100 bg-info bg-opacity-25 d-flex flex-column">
+      <PageTitle />
       <Weather />
-    </>
+    </div>
   );
 }
