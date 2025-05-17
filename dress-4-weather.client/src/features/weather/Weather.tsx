@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { useWeather } from '@/features/weather/hooks/useWeather';
 import { WeatherGrid } from '@/features/weather/components/WeatherGrid';
 
 export function Weather() {
   const { weatherData, loading, error, fetchWeatherData } = useWeather();
+  const [showAllData, setShowAllData] = useState(false);
+  const firstDayData = weatherData ? [weatherData[0]] : [];
+
   if (loading) return <div>Loading Weather data...</div>;
   if (error)
     return <div>There was an error with loading the Weather Data: {error}</div>;
@@ -10,7 +14,11 @@ export function Weather() {
   function handleWeatherData() {
     fetchWeatherData();
   }
+  function toggleShowAllData() {
+    setShowAllData((prev) => !prev);
+  }
 
+  
   return (
     <div>
       <div className="container mt-4">
@@ -33,7 +41,19 @@ export function Weather() {
         </div>
       </div>
       <div className="container mt-4">
-        {weatherData && <WeatherGrid weatherData={weatherData} />}
+        {weatherData && (
+        <>
+        <WeatherGrid weatherData={showAllData ? weatherData : firstDayData} />
+        <div className="text-center mt-3">
+          <button
+            className="btn btn-secondary"
+            onClick={toggleShowAllData}
+          >
+            {showAllData ? 'Show Less' : 'Show All Data'}
+          </button>
+        </div>
+        </>
+        )}
       </div>
     </div>
   );
