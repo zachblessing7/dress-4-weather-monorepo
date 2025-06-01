@@ -9,15 +9,18 @@ export function useOutfitSuggestion(weatherData: WeatherData) {
 
   useEffect(() => {
     if (weatherData) {
-      const temp = weatherData.temp;
-      const baseUrl = import.meta.env.BACKEND_API_BASE_URL || 'http://localhost:3000';
+      const temp = Math.floor(weatherData.temp);
+      const baseUrl =
+        import.meta.env.BACKEND_API_BASE_URL || 'http://localhost:3000';
       setLoading(true);
-      fetch(`${baseUrl}/api/outfit-suggestion?temp=${temp}`)
+      fetch(`${baseUrl}/api/outfit-suggestions/by-temperature/${temp}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error('Failed to fetch outfit suggestion');
           }
-          return response.json();
+          let results = response.json();
+          console.log(`Outfit Suggestion Response: ${results}`);
+          return results;
         })
         .then((data) => {
           setOutfit(data);
