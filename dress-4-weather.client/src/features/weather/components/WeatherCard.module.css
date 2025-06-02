@@ -1,0 +1,40 @@
+/* Use colors from main.css */
+
+.weatherCard {
+  background-color: var(--warm-white);
+  border: 1px solid var(--soft-sage);
+  border-radius: 12px;
+}
+
+.weatherCardHeader {
+  background-color: var(--soft-sage);
+  color: var(--dark-olive);
+  border-radius: 12px 12px 0 0;
+}
+
+.weatherCardBody {
+  background-color: var(--warm-white);
+  color: var(--dark-olive);
+}
+
+.weatherCardText p {
+  margin-bottom: 0.5rem;
+  color: var(--dark-olive);
+}
+
+.weatherCardFooter {
+  background-color: var(--sage-green);
+  color: var(--dark-olive);
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .weatherCard {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}

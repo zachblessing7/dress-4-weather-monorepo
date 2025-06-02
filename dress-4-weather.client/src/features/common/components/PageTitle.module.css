@@ -1,0 +1,52 @@
+/* Use colors from main.css */
+.pageTitleContainer {
+  background: transparent;
+  color: white;
+  padding: 4rem 0 2rem 0; /* Reduced bottom padding */
+  margin-bottom: 0;
+}
+
+.title {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.decorativeIcon {
+  color: var(--warm-beige);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.divider {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 80px;
+  margin: 1.5rem auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pageTitleContainer {
+    padding: 3rem 0 1.5rem 0;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .decorativeIcon {
+    font-size: 2.5rem;
+  }
+}

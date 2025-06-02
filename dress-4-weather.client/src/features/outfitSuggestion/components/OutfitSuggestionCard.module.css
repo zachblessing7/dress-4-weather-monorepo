@@ -1,0 +1,114 @@
+/* Use colors from main.css */
+
+.outfitCard {
+  background-color: var(--warm-white);
+  border: 1px solid var(--soft-sage);
+  border-radius: 12px;
+}
+
+.outfitCardHeader {
+  background-color: var(--soft-sage);
+  color: var(--dark-olive);
+  border-radius: 12px 12px 0 0;
+  padding: 1rem;
+  margin-bottom: 0;
+}
+
+.outfitCardBody {
+  background-color: var(--warm-white);
+  color: var(--dark-olive);
+  padding: 1.5rem;
+}
+
+.outfitName {
+  color: var(--dark-olive);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.outfitItem {
+  margin-bottom: 0.75rem;
+  color: var(--dark-olive);
+  font-size: 0.95rem;
+}
+
+.outfitItem strong {
+  color: var(--forest-green);
+  font-weight: 600;
+}
+
+.weatherSpecificSection {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--soft-sage);
+}
+
+.weatherSpecificTitle {
+  color: var(--forest-green);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.weatherCondition {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: var(--cream-background);
+  border-radius: 8px;
+  border-left: 3px solid var(--sage-green);
+}
+
+.conditionTitle {
+  color: var(--forest-green);
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+
+.weatherItemsList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.weatherItemsList li {
+  padding: 0.25rem 0;
+  color: var(--dark-olive);
+  font-size: 0.9rem;
+}
+
+.weatherItemsList li::before {
+  content: '• ';
+  color: var(--sage-green);
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.noWeatherItems {
+  color: var(--olive-brown);
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Category badges */
+.categoryBadge {
+  background-color: var(--sage-green);
+  color: var(--dark-olive);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  margin-left: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .outfitCardBody {
+    padding: 1rem;
+  }
+
+  .weatherCondition {
+    padding: 0.5rem;
+  }
+}
