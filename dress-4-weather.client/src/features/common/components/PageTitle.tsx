@@ -1,11 +1,22 @@
+import styles from './PageTitle.module.css';
+
 export function PageTitle() {
   return (
-    <div className="container mt-4">
-      <div className="text-center mb-5">
-        <h1 className="display-4 fw-bold">Dress4Weather</h1>
-        <p className="lead text-muted">
-          Removing decision anxiety/overload for moms
-        </p>
+    <div className={styles.pageTitleContainer}>
+      <div className="container">
+        <div className="text-center">
+          <div className={styles.decorativeIcon}>
+            <i className="bi bi-cloud-sun"></i>
+          </div>
+          <h1 className={`${styles.title} display-4 fw-bold`}>
+            Weather Based Outfit Suggestion Generator
+          </h1>
+          <hr className={styles.divider} />
+          <p className={styles.subtitle}>
+            Removing decision anxiety for busy parents - smart outfit
+            suggestions based on real weather
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { OutfitSuggestion } from '@/features/outfitSuggestion/types/outfitSuggestion.types';
+import styles from './OutfitSuggestionCard.module.css';
 
 interface OutfitSuggestionCardProps {
   title: string;
@@ -10,31 +11,52 @@ export function OutfitSuggestionCard({
   outfit,
 }: OutfitSuggestionCardProps) {
   return (
-    <div className="card text-center m-2">
-      <div className="card-body">
-        <h3 className="card-header fw-bold">{title}</h3>
+    <div className={`${styles.outfitCard} card text-center m-2`}>
+      <div className={`${styles.outfitCardBody} card-body`}>
+        <h3 className={`${styles.outfitCardHeader} card-header fw-bold`}>
+          {title}
+        </h3>
         <div className="card-text">
-          <h5>{outfit.name}</h5>
-          <p>Head Wear: {outfit.headwear?.join(', ') || 'None'}</p>
-          <p>Upper Body: {outfit.upperBody.join(', ')}</p>
-          <p>Lower Body: {outfit.lowerBody.join(', ')}</p>
-          <p>Footwear: {outfit.footwear.join(', ')}</p>
-          <p>Accessories: {outfit.accessories.join(', ')}</p>
+          <h5 className={styles.outfitName}>{outfit.name}</h5>
+          <p className={styles.outfitItem}>
+            <strong>Head Wear:</strong> {outfit.headwear?.join(', ') || 'None'}
+          </p>
+          <p className={styles.outfitItem}>
+            <strong>Upper Body:</strong> {outfit.upperBody.join(', ')}
+          </p>
+          <p className={styles.outfitItem}>
+            <strong>Lower Body:</strong> {outfit.lowerBody.join(', ')}
+          </p>
+          <p className={styles.outfitItem}>
+            <strong>Footwear:</strong> {outfit.footwear.join(', ')}
+          </p>
+          <p className={styles.outfitItem}>
+            <strong>Accessories:</strong> {outfit.accessories.join(', ')}
+          </p>
 
-          <div className="mt-3">
-            <h6>Weather-Specific Items:</h6>
+          <div className={styles.weatherSpecificSection}>
+            <h6 className={styles.weatherSpecificTitle}>
+              Weather-Specific Items:
+            </h6>
             {outfit.weatherSpecific?.map((weatherCondition, index) => (
-              <div key={index} className="mb-2">
-                <strong>{weatherCondition.condition}:</strong>
-                <ul className="list-unstyled ms-3">
+              <div key={index} className={styles.weatherCondition}>
+                <div className={styles.conditionTitle}>
+                  {weatherCondition.condition}:
+                </div>
+                <ul className={styles.weatherItemsList}>
                   {weatherCondition.items.map((item, itemIndex) => (
                     <li key={itemIndex}>
-                      {item.name} ({item.category})
+                      {item.name}
+                      <span className={styles.categoryBadge}>
+                        ({item.category})
+                      </span>
                     </li>
                   ))}
                 </ul>
               </div>
-            )) || <p>No weather-specific items</p>}
+            )) || (
+              <p className={styles.noWeatherItems}>No weather-specific items</p>
+            )}
           </div>
         </div>
       </div>
